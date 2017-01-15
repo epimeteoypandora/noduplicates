@@ -756,11 +756,11 @@ class AlgorithmCVRP  extends AlgorithmCVRPAbstract{
             if (bestLS.getFitness()>son.getFitness()){
                 son=bestLS;
             }     
-            if (this.population.exists(son)){
-                runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
-            }  else {
+            //if (this.population.exists(son)){
+            //    runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
+            //}  else {
                 callback(son); 
-            }
+            //}
                         
         });              
     }   
@@ -1947,7 +1947,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-650; //200
+              problem.targetFitness=-1000; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
@@ -3055,13 +3055,13 @@ deleteElement(element, map){
         //Comprobar si el que se inserta es mejor que el peor ¿comprobarlo fuera o dentro?         
       //  if (indiv.getFitness()>this.pop[this.worstp].getFitness()){
 
-        if (this.addIfNotExists(indiv,this.map)){
+        //if (this.addIfNotExists(indiv,this.map)){
             this.deleteElement(this.pop[this.worstp],this.map);
            this.pop[this.worstp] = indiv; 
            return this.worstp;            
-        } else {
-            return -1;
-        }
+        //} else {
+        //    return -1;
+        //}
 
       //  } else {
       //      return -1;
