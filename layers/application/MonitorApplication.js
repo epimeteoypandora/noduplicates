@@ -216,7 +216,7 @@ class MonitorApplication{
                    // console.log("this.replacements.length="+this.replacements.length)
 
                     //TODO -> AÑADIDO POR SI ACASO ESTO ES LO QUE DA EL ERROR
-                    if (this.replacementsFromSlaves>10){
+                    if (this.replacementsFromSlaves>20){
                         this.replacements=[];
                         this.replacementsFromSlaves=0;
                         this.slaveLastReplacement={};                        
