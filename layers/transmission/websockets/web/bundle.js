@@ -756,11 +756,11 @@ class AlgorithmCVRP  extends AlgorithmCVRPAbstract{
             if (bestLS.getFitness()>son.getFitness()){
                 son=bestLS;
             }     
-            //if (this.population.exists(son)){
-            //    runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
-            //}  else {
+            if (this.population.exists(son)){
+                runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
+            }  else {
                 callback(son); 
-            //}
+            }
                         
         });              
     }   
@@ -1947,7 +1947,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-1000; //200
+              problem.targetFitness=-650; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
