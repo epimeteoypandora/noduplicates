@@ -111,13 +111,13 @@ deleteElement(element, map){
         //Comprobar si el que se inserta es mejor que el peor ¿comprobarlo fuera o dentro?         
       //  if (indiv.getFitness()>this.pop[this.worstp].getFitness()){
 
-        //if (this.addIfNotExists(indiv,this.map)){
+        if (this.addIfNotExists(indiv,this.map)){
             this.deleteElement(this.pop[this.worstp],this.map);
            this.pop[this.worstp] = indiv; 
            return this.worstp;            
-        //} else {
-        //    return -1;
-        //}
+        } else {
+            return -1;
+        }
 
       //  } else {
       //      return -1;
