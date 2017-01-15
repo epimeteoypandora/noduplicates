@@ -1494,7 +1494,7 @@ module.exports = {
   ProccessingTypes:require("./ProccessingTypes"),
   MessageTypes:require("./MessageTypes"),
   ParameterTypes:require("./ParameterTypes"),
-  FileName:"dataProbSolomon_50_20.txt",
+  FileName:"dataProbSolomon_50_50.txt",
   Index:"index.html",  
   IndexFromFile:"index2.html",    
   FromFile:false    
@@ -1812,7 +1812,7 @@ class MonitorApplication{
                    // console.log("this.replacements.length="+this.replacements.length)
 
                     //TODO -> AÑADIDO POR SI ACASO ESTO ES LO QUE DA EL ERROR
-                    if (this.replacementsFromSlaves>10){
+                    if (this.replacementsFromSlaves>20){
                         this.replacements=[];
                         this.replacementsFromSlaves=0;
                         this.slaveLastReplacement={};                        
@@ -1947,7 +1947,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-650; //200
+              problem.targetFitness=-550; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
