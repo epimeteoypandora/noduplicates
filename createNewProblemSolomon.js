@@ -39,7 +39,7 @@ for (var i=0;i<(totalElements+1);i++){
 
 
 var maxSteps=999999999;
-var popSize1 = 50;
+var popSize1 = 20;
 var popSize2 = 100;
 var popSize3 = 150;
 
