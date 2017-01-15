@@ -351,7 +351,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-550; //200
+              problem.targetFitness=-650; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
