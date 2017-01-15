@@ -756,11 +756,11 @@ class AlgorithmCVRP  extends AlgorithmCVRPAbstract{
             if (bestLS.getFitness()>son.getFitness()){
                 son=bestLS;
             }     
-            if (this.population.exists(son)){
-                runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
-            }  else {
+           // if (this.population.exists(son)){
+            //    runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
+            //}  else {
                 callback(son); 
-            }
+            //}
                         
         });              
     }   
@@ -1412,7 +1412,7 @@ module.exports = {
   MonitorCommunication:require("../layers/communication/MonitorCommunication"),
   SlaveCommunication:require("../layers/communication/SlaveCommunication"),
   
-  //WebSocketServer:require("../layers/transmission/websockets/WebSocketServer"),  
+ // WebSocketServer:require("../layers/transmission/websockets/WebSocketServer"),  
   WebSocketClient:require("../layers/transmission/websockets/WebSocketClient"),
   WebSocketDefault:require("../layers/transmission/websockets/WebSocketDefault")  
 };
@@ -1947,7 +1947,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-550; //200
+              problem.targetFitness=-650; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
@@ -2211,12 +2211,12 @@ class SlaveApplication{
 //            var seed = Common.Maths.createSeed(141650939);
 //            Math.random=seed;    
 
-            Common.Maths.LAST_SEED=Math.floor(Math.random() * Common.Maths.SEEDS.length);
+            //Common.Maths.LAST_SEED=Math.floor(Math.random() * Common.Maths.SEEDS.length);
             var seed = Common.Maths.createSeed(Common.Maths.SEEDS[Common.Maths.LAST_SEED]);
             console.log("semilla utilizada="+Common.Maths.SEEDS[Common.Maths.LAST_SEED]);
-            //Math.random=seed;     
-            //Common.Maths.LAST_SEED=Common.Maths.LAST_SEED+1;
-            //if (Common.Maths.LAST_SEED>=Common.Maths.SEEDS.length)Common.Maths.LAST_SEED=0;
+            Math.random=seed;     
+            Common.Maths.LAST_SEED=Common.Maths.LAST_SEED+1;
+            if (Common.Maths.LAST_SEED>=Common.Maths.SEEDS.length)Common.Maths.LAST_SEED=0;
             
             
             Common.setAlgorithm(Common.Constants.AlgorithmTypes.CVRP);
@@ -3054,13 +3054,14 @@ deleteElement(element, map){
         //TODO
         //Comprobar si el que se inserta es mejor que el peor ¿comprobarlo fuera o dentro?         
       //  if (indiv.getFitness()>this.pop[this.worstp].getFitness()){
-        if (this.addIfNotExists(indiv,this.map)){
-            this.deleteElement(this.pop[this.worstp],this.map);
+
+        //if (this.addIfNotExists(indiv,this.map)){
+        //    this.deleteElement(this.pop[this.worstp],this.map);
            this.pop[this.worstp] = indiv; 
            return this.worstp;            
-        } else {
-            return -1;
-        }
+        //} else {
+        //    return -1;
+        //}
 
       //  } else {
       //      return -1;
