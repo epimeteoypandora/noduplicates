@@ -756,11 +756,11 @@ class AlgorithmCVRP  extends AlgorithmCVRPAbstract{
             if (bestLS.getFitness()>son.getFitness()){
                 son=bestLS;
             }     
-           // if (this.population.exists(son)){
-            //    runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
-            //}  else {
+            if (this.population.exists(son)){
+                runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
+            }  else {
                 callback(son); 
-            //}
+            }
                         
         });              
     }   
@@ -1412,7 +1412,7 @@ module.exports = {
   MonitorCommunication:require("../layers/communication/MonitorCommunication"),
   SlaveCommunication:require("../layers/communication/SlaveCommunication"),
   
- // WebSocketServer:require("../layers/transmission/websockets/WebSocketServer"),  
+  //WebSocketServer:require("../layers/transmission/websockets/WebSocketServer"),  
   WebSocketClient:require("../layers/transmission/websockets/WebSocketClient"),
   WebSocketDefault:require("../layers/transmission/websockets/WebSocketDefault")  
 };
@@ -3055,13 +3055,13 @@ deleteElement(element, map){
         //Comprobar si el que se inserta es mejor que el peor ¿comprobarlo fuera o dentro?         
       //  if (indiv.getFitness()>this.pop[this.worstp].getFitness()){
 
-        //if (this.addIfNotExists(indiv,this.map)){
-        //    this.deleteElement(this.pop[this.worstp],this.map);
+        if (this.addIfNotExists(indiv,this.map)){
+            this.deleteElement(this.pop[this.worstp],this.map);
            this.pop[this.worstp] = indiv; 
            return this.worstp;            
-        //} else {
-        //    return -1;
-        //}
+        } else {
+            return -1;
+        }
 
       //  } else {
       //      return -1;

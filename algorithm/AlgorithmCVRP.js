@@ -58,11 +58,11 @@ class AlgorithmCVRP  extends AlgorithmCVRPAbstract{
             if (bestLS.getFitness()>son.getFitness()){
                 son=bestLS;
             }     
-           // if (this.population.exists(son)){
-            //    runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
-            //}  else {
+            if (this.population.exists(son)){
+                runCallback(callback); //Si ya existía, vuelvo a crear otro hijo.
+            }  else {
                 callback(son); 
-            //}
+            }
                         
         });              
     }   
