@@ -1947,7 +1947,7 @@ class MonitorApplication{
 //            problem.targetFitness=-50000000; //500
 //              problem.targetFitness=-45000000; //500 más lento
 //              problem.targetFitness=-40000000; //500 más lento              
-              problem.targetFitness=-650; //200
+              problem.targetFitness=-10; //200
 
 
             var nTrucks = jsonProblem.nTrucks;
@@ -1964,7 +1964,7 @@ class MonitorApplication{
 //            console.log("###"+JSON.stringify(LSProb))            
             
 //            var maxSteps = jsonProblem.maxSteps;
-            var maxSteps = 999999999;
+            var maxSteps = 1000;
             
 //            console.log("###"+JSON.stringify(maxSteps))            
             console.log("vamos a cargar poblacion")
@@ -2211,12 +2211,12 @@ class SlaveApplication{
 //            var seed = Common.Maths.createSeed(141650939);
 //            Math.random=seed;    
 
-            Common.Maths.LAST_SEED=Math.floor(Math.random() * Common.Maths.SEEDS.length);
+            //Common.Maths.LAST_SEED=Math.floor(Math.random() * Common.Maths.SEEDS.length);
             var seed = Common.Maths.createSeed(Common.Maths.SEEDS[Common.Maths.LAST_SEED]);
             console.log("semilla utilizada="+Common.Maths.SEEDS[Common.Maths.LAST_SEED]);
-            //Math.random=seed;     
-            //Common.Maths.LAST_SEED=Common.Maths.LAST_SEED+1;
-            //if (Common.Maths.LAST_SEED>=Common.Maths.SEEDS.length)Common.Maths.LAST_SEED=0;
+            Math.random=seed;     
+            Common.Maths.LAST_SEED=Common.Maths.LAST_SEED+1;
+            if (Common.Maths.LAST_SEED>=Common.Maths.SEEDS.length)Common.Maths.LAST_SEED=0;
             
             
             Common.setAlgorithm(Common.Constants.AlgorithmTypes.CVRP);
